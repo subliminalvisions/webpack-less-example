@@ -16,10 +16,6 @@ module.exports = {
       },      
       module: {
         rules: [
-          // { 
-          //   test: /\.css$/, 
-          //   use: ["style-loader", "css-loader"] 
-          // },
           {
             test: /\.(less)$/,
             use: [{
@@ -29,25 +25,19 @@ module.exports = {
             }, {
                 loader: 'less-loader' // compiles Less to CSS
             }]
-        },
-    
+          },
           { 
             test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
             type: 'asset/resource',
           },
-      
         ]
       },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: true,
-      // chunks: ['index'],
-      // filename: 'index.html',
       title: "Webpack Output test2",
     }),
-
     new CleanWebpackPlugin()
   ],
-
 };
